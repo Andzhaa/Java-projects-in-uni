@@ -5,22 +5,13 @@ public abstract class Employee {
     private int baseSalary;
     private int workingHours;
     private float bonus;
-    private int salesAmmount;
-    private int salaryPerSales;
+    private int SalesAmount;
+    private int SalaryPerSale;
     private String firstName;
     private String lastName;
     private String socialNum;
     private String conractType;
     private int salaryPerHour;
-    private int numberOfSales;
-
-    public int getNumberOfSales() {
-        return numberOfSales;
-    }
-
-    public void setNumberOfSales(int numberOfSales) {
-        this.numberOfSales = numberOfSales;
-    }
 
     public int getSalaryPerHour() {
         return salaryPerHour;
@@ -62,20 +53,20 @@ public abstract class Employee {
         this.firstName = firstName;
     }
 
-    public int getSalaryPerSales() {
-        return salaryPerSales;
+    public int getSalaryPerSale() {
+        return SalaryPerSale;
     }
 
-    public void setSalaryPerSales(int salaryPerSales) {
-        this.salaryPerSales = salaryPerSales;
+    public void setSalaryPerSale(int SalaryPerSale) {
+        this.SalaryPerSale = SalaryPerSale;
     }
 
-    public int getSalesAmmount() {
-        return salesAmmount;
+    public int getSalesAmount() {
+        return SalesAmount;
     }
 
-    public void setSalesAmmount(int slaesAmmount) {
-        this.salesAmmount = slaesAmmount;
+    public void setSalesAmount(int slaesAmmount) {
+        this.SalesAmount = slaesAmmount;
     }
 
     public float getBonus() {
@@ -117,8 +108,12 @@ class FullTimeEmployee extends Employee {
     }
 
     public String toString() {
-        // seit vajadzes izvadi
-        return null;
+        // Still need to work on this part
+        int salary = income();
+        return "Full-time Employee: " +
+               "First Name: " + getFirstName() +
+               ", Last Name: " + getLastName() +
+               ", Base Salary: " + salary;
     }
 
 }
@@ -130,32 +125,52 @@ class PartTimeEmployee extends Employee {
         return Salary;
     }
 
-    public String toString() {
-        // seit vajadzes izvadi
-        return null;
+    public String toString() { //Still need to work on this part
+        int salary = income();
+        return "Part-time Employee:" +
+               "\nFirst Name: " + getFirstName() +
+               "\nLast Name: " + getLastName() +
+               "\nWorking Hours: " + getWorkingHours() +
+               "\nSalary: " + salary;
     }
 
 }
 
-class CommisionEmployee extends Employee {
+class CommissionEmployee extends Employee {
 
     public int income() {
-        int Salary = getSalaryPerSales() * getNumberOfSales();
+        int Salary = getSalaryPerSale() * getSalesAmount();
         return Salary;
     }
 
     public String toString() {
-        // seit vajadzes izvadi
-        return null;
+        // Still need to work om thiss part
+        int salary = income();
+        return "Commissioned Employee:" +
+               "\nFirst Name: " + getFirstName() +
+               "\nLast Name: " + getLastName() +
+               "\nSales Amount: " + getSalesAmount() +
+               "\nSalary: " + salary;
     }
 
 }
 
-class BaseCommisionEmployee extends CommisionEmployee {
+class BaseCommissionEmployee extends CommissionEmployee {
     public int income(){
-        int baseSalary = super.income();
-        float Bonus = baseSalary * getBonus() + getBaseSalary();
-        return (int) (baseSalary + Bonus);
+        int baseSalary = (int) ((super.income() + getBaseSalary()) * getBonus());
+        //float Bonus = baseSalary * getBonus() + getBaseSalary();
+        return baseSalary;
+    }
+
+    public String toString() {
+        int salary = income();
+        return "Base Employee with Commission:" +
+               "\nFirst Name: " + getFirstName() +
+               "\nLast Name: " + getLastName() +
+               "\nBase Salary: " + getBaseSalary() +
+               "\nSales Amount: " + getSalesAmount() +
+               "\nSalary: " + salary +
+               "\nBonus: " + getBonus();
     }
 
 }
