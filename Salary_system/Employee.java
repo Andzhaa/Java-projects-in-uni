@@ -158,7 +158,6 @@ class CommissionEmployee extends Employee {
 class BaseCommissionEmployee extends CommissionEmployee {
     public int income(){
         int baseSalary = (int) ((super.income() + getBaseSalary()) * getBonus());
-        //float Bonus = baseSalary * getBonus() + getBaseSalary();
         return baseSalary;
     }
 
