@@ -58,6 +58,7 @@ public class Main {
     private static void registerEmployee() {
         System.out.println(" _________________________________________ ");
         System.out.println("|Choose the type of employee to register: |");
+        System.out.println("|-----------------------------------------|");
         System.out.println("|1. Full-time Employee                    |");
         System.out.println("|2. Part-time Employee                    |");
         System.out.println("|3. Commissioned Employee                 |");
@@ -214,6 +215,7 @@ public class Main {
     private static void printByPosition() {
         System.out.println(" _____________________________________");
         System.out.println("| Choose the position to filter by:   |");
+        System.out.println("|-------------------------------------|");
         System.out.println("| 1. Full-time Employee               |");
         System.out.println("| 2. Part-time Employee               |");
         System.out.println("| 3. Commissioned Employee            |");
