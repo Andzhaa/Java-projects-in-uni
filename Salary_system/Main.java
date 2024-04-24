@@ -18,7 +18,8 @@ public class Main {
             System.out.println("|2. Print Employee Data     |");
             System.out.println("|3. Print by position       |");
             System.out.println("|4. Print by Contract       |");
-            System.out.println("|5. Exit                    |");
+            System.out.println("|5. Delete employee record  |");
+            System.out.println("|6. Exit                    |");
             System.out.println("|___________________________|");
 
             System.out.print("\n    input number -> ");
@@ -39,8 +40,12 @@ public class Main {
                     printByContract();
                     break;
                 case 5:
+                    deleteEmployee();
+                    break;
+                case 6:
                     running = false;
                     System.out.println("Exiting the program...");
+                    System.out.println("Than you for using our programm!");
                     break;
                 default:
                     System.out.println("Invalid choice. Please try again.");
@@ -278,4 +283,25 @@ public class Main {
             }
         }
     }
+
+    private static void deleteEmployee() {
+    System.out.println("Deleting an Employee...");
+    System.out.print("Enter Social Security number of the employee to delete: ");
+    String socNum = scanner.nextLine();
+    
+    Employee employeeToDelete = null;
+    for (Employee employee : employees) {
+        if (employee.getSocialNum().equals(socNum)) {
+            employeeToDelete = employee;
+            break;
+        }
+    }
+    
+    if (employeeToDelete != null) {
+        employees.remove(employeeToDelete);
+        System.out.println("Employee with Social Security number " + socNum + " has been deleted.");
+    } else {
+        System.out.println("No employee found with Social Security number " + socNum + ".");
+    }
+}
 }
