@@ -143,7 +143,7 @@ class PartTimeEmployee extends Employee {
 class CommissionEmployee extends Employee {
 
     public int income() {
-        int Salary = getSalaryPerSale() * getSalesAmount();
+        int Salary = getSalaryPerSale() * (getSalesAmount() / 10);
         return Salary;
     }
 
