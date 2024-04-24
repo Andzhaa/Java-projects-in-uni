@@ -12,15 +12,16 @@ public class Main {
         boolean running = true;
 
         while (running) {
-            System.out.println(" ___________________________ ");
-            System.out.println("|Choose an option:          |");
-            System.out.println("|1. Register Employee       |");
-            System.out.println("|2. Print Employee Data     |");
-            System.out.println("|3. Print by position       |");
-            System.out.println("|4. Print by Contract       |");
-            System.out.println("|5. Delete employee record  |");
-            System.out.println("|6. Exit                    |");
-            System.out.println("|___________________________|");
+            System.out.println(" _____________________________ ");
+            System.out.println("|Choose an option:            |");
+            System.out.println("|-----------------------------|");
+            System.out.println("|1. Register Employee         |");
+            System.out.println("|2. Print Employee Data       |");
+            System.out.println("|3. Print by position         |");
+            System.out.println("|4. Print by Contract         |");
+            System.out.println("|5. Delete employee record    |");
+            System.out.println("|6. Exit                      |");
+            System.out.println("|_____________________________|");
 
             System.out.print("\n    input number -> ");
             int choice = scanner.nextInt();
