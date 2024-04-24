@@ -97,6 +97,7 @@ public class Main {
         String socNum = scanner.nextLine();
         System.out.print("Base Salary: ");
         int baseSalary = scanner.nextInt();
+        scanner.nextLine();
         System.out.print("Type of contract: ");
         String contractType = scanner.nextLine();
         scanner.nextLine();
@@ -124,6 +125,7 @@ public class Main {
         int workingHours = scanner.nextInt();
         System.out.print("Salary per Hour: ");
         int salaryPerHour = scanner.nextInt();
+        scanner.nextLine();
         System.out.print("Type of contract: ");
         String contractType = scanner.nextLine();
         scanner.nextLine();
@@ -152,6 +154,7 @@ public class Main {
         int salesAmount = scanner.nextInt();
         System.out.print("Salary per Sale: ");
         int salaryPerSale = scanner.nextInt();
+        scanner.nextLine();
         System.out.print("Type of contract: ");
         String contractType = scanner.nextLine();
         scanner.nextLine();
@@ -184,6 +187,7 @@ public class Main {
         int salaryPerSale = scanner.nextInt();
         System.out.print("Bonus: ");
         float bonus = scanner.nextFloat();
+        scanner.nextLine();
         System.out.print("Type of contract: ");
         String contractType = scanner.nextLine();
         scanner.nextLine();
