@@ -108,7 +108,6 @@ class FullTimeEmployee extends Employee {
     }
 
     public String toString() {
-        // Still need to work on this part
         int salary = income();
         return "Full-time Employee: " +
                "\nFirst Name: " + getFirstName() +
@@ -127,7 +126,7 @@ class PartTimeEmployee extends Employee {
         return Salary;
     }
 
-    public String toString() { //Still need to work on this part
+    public String toString() {
         int salary = income();
         return "Part-time Employee:" +
                "\nFirst Name: " + getFirstName() +
@@ -148,7 +147,6 @@ class CommissionEmployee extends Employee {
     }
 
     public String toString() {
-        // Still need to work om thiss part
         int salary = income();
         return "Commissioned Employee:" +
                "\nFirst Name: " + getFirstName() +
