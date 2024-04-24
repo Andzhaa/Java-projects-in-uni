@@ -12,14 +12,16 @@ public class Main {
         boolean running = true;
 
         while (running) {
-            System.out.println("\nChoose an option:");
-            System.out.println("1. Register Employee");
-            System.out.println("2. Print Employee Data");
-            System.out.println("3. Print by position");
-            System.out.println("4. Print by Contract");
-            System.out.println("5. Exit");
+            System.out.println(" ___________________________ ");
+            System.out.println("|Choose an option:          |");
+            System.out.println("|1. Register Employee       |");
+            System.out.println("|2. Print Employee Data     |");
+            System.out.println("|3. Print by position       |");
+            System.out.println("|4. Print by Contract       |");
+            System.out.println("|5. Exit                    |");
+            System.out.println("|___________________________|");
 
-            System.out.print("\ninput number -> ");
+            System.out.print("\n    input number -> ");
             int choice = scanner.nextInt();
             scanner.nextLine();
 
@@ -48,13 +50,15 @@ public class Main {
     }
 
     private static void registerEmployee() {
-        System.out.println("\nChoose the type of employee to register:");
-        System.out.println("1. Full-time Employee");
-        System.out.println("2. Part-time Employee");
-        System.out.println("3. Commissioned Employee");
-        System.out.println("4. Base Employee with Commission");
+        System.out.println(" _________________________________________ ");
+        System.out.println("|Choose the type of employee to register: |");
+        System.out.println("|1. Full-time Employee                    |");
+        System.out.println("|2. Part-time Employee                    |");
+        System.out.println("|3. Commissioned Employee                 |");
+        System.out.println("|4. Base Employee with Commission         |");
+        System.out.println("|_________________________________________|");
 
-        System.out.print("\ninput number -> ");
+        System.out.print("\n    input number -> ");
         int TypeChoice = scanner.nextInt();
         scanner.nextLine();
 
@@ -82,14 +86,20 @@ public class Main {
         String firstName = scanner.nextLine();
         System.out.print("Last Name: ");
         String lastName = scanner.nextLine();
+        System.out.print("Social Security nummber: ");
+        String socNum = scanner.nextLine();
         System.out.print("Base Salary: ");
         int baseSalary = scanner.nextInt();
+        System.out.print("Type of contract: ");
+        String contractType = scanner.nextLine();
         scanner.nextLine();
 
         FullTimeEmployee fullTimeEmployee = new FullTimeEmployee();
         fullTimeEmployee.setFirstName(firstName);
         fullTimeEmployee.setLastName(lastName);
         fullTimeEmployee.setBaseSalary(baseSalary);
+        fullTimeEmployee.setConractType(contractType);
+        fullTimeEmployee.setSocialNum(socNum);
         employees.add(fullTimeEmployee);
 
         System.out.println("Full-time Employee registered successfully.");
@@ -101,10 +111,14 @@ public class Main {
         String firstName = scanner.nextLine();
         System.out.print("Last Name: ");
         String lastName = scanner.nextLine();
+        System.out.print("Social Security nummber: ");
+        String socNum = scanner.nextLine();
         System.out.print("Working Hours: ");
         int workingHours = scanner.nextInt();
         System.out.print("Salary per Hour: ");
         int salaryPerHour = scanner.nextInt();
+        System.out.print("Type of contract: ");
+        String contractType = scanner.nextLine();
         scanner.nextLine();
 
         PartTimeEmployee partTimeEmployee = new PartTimeEmployee();
@@ -112,6 +126,8 @@ public class Main {
         partTimeEmployee.setLastName(lastName);
         partTimeEmployee.setWorkingHours(workingHours);
         partTimeEmployee.setSalaryPerHour(salaryPerHour);
+        partTimeEmployee.setConractType(contractType);
+        partTimeEmployee.setSocialNum(socNum);
         employees.add(partTimeEmployee);
 
         System.out.println("Part-time Employee registered successfully.");
@@ -123,10 +139,14 @@ public class Main {
         String firstName = scanner.nextLine();
         System.out.print("Last Name: ");
         String lastName = scanner.nextLine();
+        System.out.print("Social Security nummber: ");
+        String socNum = scanner.nextLine();
         System.out.print("Sales Amount: ");
         int salesAmount = scanner.nextInt();
         System.out.print("Salary per Sale: ");
         int salaryPerSale = scanner.nextInt();
+        System.out.print("Type of contract: ");
+        String contractType = scanner.nextLine();
         scanner.nextLine();
 
         CommissionEmployee commissionEmployee = new CommissionEmployee();
@@ -134,6 +154,8 @@ public class Main {
         commissionEmployee.setLastName(lastName);
         commissionEmployee.setSalesAmount(salesAmount);
         commissionEmployee.setSalaryPerSale(salaryPerSale);
+        commissionEmployee.setConractType(contractType);
+        commissionEmployee.setSocialNum(socNum);
         employees.add(commissionEmployee);
 
         System.out.println("Commissioned Employee registered successfully.");
@@ -145,6 +167,8 @@ public class Main {
         String firstName = scanner.nextLine();
         System.out.print("Last Name: ");
         String lastName = scanner.nextLine();
+        System.out.print("Social Security nummber: ");
+        String socNum = scanner.nextLine();
         System.out.print("Base Salary: ");
         int baseSalary = scanner.nextInt();
         System.out.print("Sales Amount: ");
@@ -153,6 +177,8 @@ public class Main {
         int salaryPerSale = scanner.nextInt();
         System.out.print("Bonus: ");
         float bonus = scanner.nextFloat();
+        System.out.print("Type of contract: ");
+        String contractType = scanner.nextLine();
         scanner.nextLine();
 
         BaseCommissionEmployee baseCommissionEmployee = new BaseCommissionEmployee();
@@ -162,25 +188,94 @@ public class Main {
         baseCommissionEmployee.setSalesAmount(salesAmount);
         baseCommissionEmployee.setSalaryPerSale(salaryPerSale);
         baseCommissionEmployee.setBonus(bonus);
+        baseCommissionEmployee.setConractType(contractType);
+        baseCommissionEmployee.setSocialNum(socNum);
         employees.add(baseCommissionEmployee);
 
         System.out.println("Base Employee with Commission registered successfully.");
     }
 
     private static void printEmployeeData() {
-        System.out.println("\nAll Employees:");
+        System.out.println("============================================");
+        System.out.println("            All Employees:");
+        System.out.println("============================================");
         for (Employee employee : employees) {
             System.out.println(employee);
+            System.out.println("============================================");
         }
     }
 
     private static void printByPosition() {
-        System.out.println("\nPrint by position not yet implemented.");
-        // need to figure out how tf to do that
+        System.out.println(" _____________________________________");
+        System.out.println("| Choose the position to filter by:   |");
+        System.out.println("| 1. Full-time Employee               |");
+        System.out.println("| 2. Part-time Employee               |");
+        System.out.println("| 3. Commissioned Employee            |");
+        System.out.println("| 4. Base Employee with Commission    |");
+        System.out.println("|_____________________________________|");
+        System.out.print("\n    input number -> ");
+        int positionChoice = scanner.nextInt();
+        scanner.nextLine();
+    
+        System.out.println("============================================");
+        switch (positionChoice) {
+            case 1:
+                System.out.println("    Full-time Employees:");
+                System.out.println("============================================");
+                for (Employee employee : employees) {
+                    if (employee instanceof FullTimeEmployee) {
+                        System.out.println(employee);
+                        System.out.println("============================================");
+                    }
+                }
+                break;
+            case 2:
+                System.out.println("Part-time Employees:");
+                System.out.println("============================================");
+                for (Employee employee : employees) {
+                    if (employee instanceof PartTimeEmployee) {
+                        System.out.println(employee);
+                        System.out.println("============================================");
+                    }
+                }
+                break;
+            case 3:
+                System.out.println("Commissioned Employees:");
+                System.out.println("============================================");
+                for (Employee employee : employees) {
+                    if (employee instanceof CommissionEmployee) {
+                        System.out.println(employee);
+                        System.out.println("============================================");
+                    }
+                }
+                break;
+            case 4:
+                System.out.println("Base Employees with Commission:");
+                System.out.println("============================================");
+                for (Employee employee : employees) {
+                    if (employee instanceof BaseCommissionEmployee) {
+                        System.out.println(employee);
+                        System.out.println("============================================");
+                    }
+                }
+                break;
+            default:
+                System.out.println("Invalid choice. Please try again.");
+        }
     }
 
     private static void printByContract() {
-        System.out.println("\nPrint by contract not yet implemented.");
-        // and same here as in the printByPosition
+        System.out.print("\nEnter the contract type to filter by: ");
+        String contractType = scanner.nextLine().trim();
+
+        System.out.println("============================================");
+        System.out.println("    Employees with Contract Type: " + contractType);
+        System.out.println("============================================");
+        for (Employee employee : employees) {
+            if (employee.getConractType().equalsIgnoreCase(contractType)) {
+                System.out.println(employee);
+                System.out.println("============================================");
+            }
+        }
     }
 }

@@ -111,9 +111,11 @@ class FullTimeEmployee extends Employee {
         // Still need to work on this part
         int salary = income();
         return "Full-time Employee: " +
-               "First Name: " + getFirstName() +
-               ", Last Name: " + getLastName() +
-               ", Base Salary: " + salary;
+               "\nFirst Name: " + getFirstName() +
+               "\nLast Name: " + getLastName() +
+               "\nBase Salary: " + salary +
+               "\nContract Type: " +getConractType() +
+               "\nSocial security nummber: " + getSocialNum();
     }
 
 }
@@ -131,7 +133,9 @@ class PartTimeEmployee extends Employee {
                "\nFirst Name: " + getFirstName() +
                "\nLast Name: " + getLastName() +
                "\nWorking Hours: " + getWorkingHours() +
-               "\nSalary: " + salary;
+               "\nSalary: " + salary +
+               "\nContract Type: " +getConractType() +
+               "\nSocial security nummber: " + getSocialNum();
     }
 
 }
@@ -150,15 +154,19 @@ class CommissionEmployee extends Employee {
                "\nFirst Name: " + getFirstName() +
                "\nLast Name: " + getLastName() +
                "\nSales Amount: " + getSalesAmount() +
-               "\nSalary: " + salary;
+               "\nSalary: " + salary +
+               "\nContract Type: " +getConractType() +
+               "\nSocial security nummber: " + getSocialNum();
     }
 
 }
 
 class BaseCommissionEmployee extends CommissionEmployee {
     public int income(){
-        int baseSalary = (int) ((super.income() + getBaseSalary()) * getBonus());
-        return baseSalary;
+        int baseSalary = (int) (super.income() + getBaseSalary());
+        float Bonus = baseSalary * (getBonus() / 100);
+        int fullSalary = (int) (baseSalary + Bonus);
+        return fullSalary;
     }
 
     public String toString() {
@@ -169,7 +177,9 @@ class BaseCommissionEmployee extends CommissionEmployee {
                "\nBase Salary: " + getBaseSalary() +
                "\nSales Amount: " + getSalesAmount() +
                "\nSalary: " + salary +
-               "\nBonus: " + getBonus();
+               "\nBonus: " + getBonus() + 
+               "\nContract Type: " +getConractType() +
+               "\nSocial security nummber: " + getSocialNum();
     }
 
 }
