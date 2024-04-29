@@ -63,8 +63,18 @@ public class LibraryManagmentSystem {
                         }
                     }
 
-                    System.out.print("Enter title: ");
-                    String title = scanner.nextLine();
+                    String title;
+                    while (true) {
+                        System.out.print("Enter title: ");
+                        title = scanner.nextLine();
+                        if (!title.isEmpty()) {
+                            break;
+                        } else {
+                            System.out.println("Title cannot be empty. Please input a valid title.");
+                        }
+                    }
+                    
+                    
 
                     double price;
                     while (true) {
@@ -94,9 +104,19 @@ public class LibraryManagmentSystem {
                     System.out.println("    | 3. Print Novels                         |");
                     System.out.println("    | 4. Print all                            |");
                     System.out.println("    |_________________________________________|");
-                    System.out.print("Choose an option: ");
-                    int printOption = scanner.nextInt();
-                    scanner.nextLine();
+
+                    int printOption;
+                    while (true) {
+                        System.out.print("      Choose option -> ");
+                        if (scanner.hasNextInt()) {
+                            printOption = scanner.nextInt();
+                            scanner.nextLine();
+                            break; 
+                        } else {
+                            System.out.println("Invalid input. Please enter a number.");
+                            scanner.nextLine();
+                        }
+                    }
 
                     library.printLibraryInventory(printOption);
                     break;
